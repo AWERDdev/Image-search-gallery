@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 2000px;
+    min-width: 200px;
+    height: 10%;
+    max-height: 10vh;
+    outline: 1px solid lightgray;
+   
+}
