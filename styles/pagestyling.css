@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 
 }
 .top-bar{
@@ -13,5 +16,56 @@
     height: 10%;
     max-height: 10vh;
     outline: 1px solid lightgray;
-   
+   color: #067BC2;
+}
+.title{
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 0 1rem;
+    gap: 2vw;
+}
+.links{
+    display: flex;
+    gap: 2vw;
+    margin:0rem 1rem;
+
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: hsl(195, 53%, 49%);
+    text-decoration: none;
+}
+.links2{
+    display: flex;
+    gap: 2vw;
+    outline: 1px solid lightgray;
+    justify-content: space-between;
+
+
+}
+
+.links2 div{
+    display: flex;
+    gap: 1vw;
+    margin:0rem 1rem;
+}
+.usplash-logo{
+    width: 30vw;
+    height: auto;
+    max-width: 30px;
+    min-width: 5px;
+    background: none;
+    appearance: none;
+}
+
+@media(max-width:491px){
+    .links2 .sec2{
+        display: none;
+
+        
+    }
 }

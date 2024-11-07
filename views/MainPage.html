@@ -7,23 +7,56 @@
     <link rel="stylesheet" href="../styles/buttonstyling.css">
     <link rel="stylesheet" href="../styles/pagestyling.css">
     <link rel="stylesheet" href="../styles/imgstyling.css">
+    <link rel="stylesheet" href="../styles/SearchEngine.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="top-bar">
     <div class="title">
+        <div class="unsplash-logo-container">
+            <a href="https://unsplash.com/" class="unsplash">
+                <svg class="usplash-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 230.2V480H0V230.2H141.1V355.1H306.9V230.2zM306.9 32H141.1V156.9H306.9z"/>
+                </svg>
+            </a>
+        </div>
     <h1>AWERDDev</h1>
+</div>
+
+<div class="links">
+    <a href="https://unsplash.com/" class="Main-unsplash-site">Unsplash</a>
+    <a href="https://unsplash.com/developers" class="learn-more">LearnMore</a>
 </div>
 </div>
 <div class="body">
-    <div class="Search-Engine-container">
-        <form action="/DevTest">
-        <input type="search" class="Search-bar"name="search"placeholder="Search">
-        <button class="search-button"name="search-btn">Search</button>
+    <div class="links2">
+        <div class="sec">
+        <a href="https://unsplash.com/" class="Main-unsplash-site">photos</a>
+        <a href="https://unsplash.com/illustrations" class="learn-more">Illustrations</a>
+        <a href="https://unsplash.com/plus/new" class="Main-unsplash-site">Unsplash+</a>
+    </div>    
+    
+    <div class="sec2">
+        <a href="https://unsplash.com/t/3d-renders" class="learn-more">3DRenders</a>
+        <a href="https://unsplash.com/t/wallpapers" class="Main-unsplash-site">Wallpapers</a>
+        <a href="https://unsplash.com/t/nature" class="learn-more">Nature</a>    
     </div>
-</form>
-    <div class="img-Display"></div>
+
+</div>
+    <form action="/"Method="get">
+        <div class="Search-Engine-container">
+            
+            <input type="search" class="Search-bar"name="search-bar"placeholder="Search">
+            <button class="search-button"name="search-btn">Search</button>
+        </div>
+    </form> 
+    <div class="img-Display">
+        <!-- <img src="../imgs/car.jpg" alt="jeeb" class="img"> -->
+    </div>
 </div>
 <div class="bottom"></div>
 <script src="../tools/SearchEngine.js"></script>
+<script src="https://kit.fontawesome.com/adf4462067.js" crossorigin="anonymous"></script>
 </body>
 </html>
