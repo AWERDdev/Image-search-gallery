@@ -44,19 +44,29 @@ app.get('/DevTest',(req,res)=>{
 //* chatgpt
 //* search api route
 app.get('/search', async (req, res) => {
-    const query = req.query.query; // Get the search query from the request
-    const apiKey = process.env.UNSPLASH_API_KEY;
+    const query = req.query.query; // Get the search term from the query parameters
+
+    // Check if the query is provided
+    if (!query) {
+        return res.status(400).json({ error: 'Search query is required' });
+    }
+
+    const unsplashAccessKey = process.env.UNSPLASH_ACCESS_KEY; // Your Unsplash API key
 
     try {
-        const response = await axios.get('https://api.unsplash.com/search/photos', {
-            params: { query },
-            headers: {
-                Authorization: `Client-ID ${apiKey}`,
-            },
+        const response = await axios.get(`https://api.unsplash.com/search/photos`, {
+            params: {
+                query: query,
+                client_id: unsplashAccessKey // Pass the access key here
+            }
         });
+
+        // Send back the results
         res.json(response.data);
     } catch (error) {
-        res.status(500).send('Error fetching images');
+        // Handle error
+        console.error(error);
+        res.status(500).json({ error: 'Failed to fetch data from Unsplash API' });
     }
 });
 
