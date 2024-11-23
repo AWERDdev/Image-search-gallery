@@ -36,6 +36,7 @@ app.get('/imgs/:file',(req,res)=>{
     res.sendFile(path.join(__dirname,'../imgs',file))
 })
 
+
 //* Routes
 //* main app route
 app.get('/DevTest',(req,res)=>{
@@ -44,7 +45,8 @@ app.get('/DevTest',(req,res)=>{
 //* chatgpt
 //* search api route
 app.get('/search', async (req, res) => {
-    const query = req.query.query; // Get the search term from the query parameters
+    const query = req.query.searchInput; // Get the search term from the query parameters
+    console.log(query)
 
     // Check if the query is provided
     if (!query) {
@@ -63,18 +65,13 @@ app.get('/search', async (req, res) => {
 
         // Send back the results
         res.json(response.data);
+      
     } catch (error) {
         // Handle error
         console.error(error);
         res.status(500).json({ error: 'Failed to fetch data from Unsplash API' });
     }
 });
-
-
-
-// app.get('/DevTest/LearnMore',(req,res)=>{
-//     res.sendFile(path.join(__dirname,'../views','LearnMore.html'))
-// })
 
 
 app.listen(port,()=>{

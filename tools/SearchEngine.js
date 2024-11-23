@@ -1,8 +1,12 @@
-document.getElementById('search-button').addEventListener('click', async () => {
+document.getElementById('Form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent form submission
     const query = document.getElementById('search-bar').value;
-    const response = await fetch(`/search?query=${encodeURIComponent(query)}`);
+    if (!query) {
+        alert('Please enter a search term.');
+        return;
+    }
+    const response = await fetch(`/search?searchInput=${encodeURIComponent(query)}`);
     
-    // Check if the response is OK
     if (response.ok) {
         const data = await response.json();
         displayData(data.results); // Pass the results to the displayData function
@@ -12,13 +16,14 @@ document.getElementById('search-button').addEventListener('click', async () => {
 });
 
 function displayData(results) {
-    const imageResults = document.getElementById('img-Display');
+    const imageResults = document.querySelector('.img-Display');
     imageResults.innerHTML = ''; // Clear previous results
 
     results.forEach(image => {
-        const img = document.createElement('img'); // Create an img element
-        img.src = image.urls.small; // Set the source to the image URL
-        img.alt = image.alt_description || 'Image'; // Set alt text
-        imageResults.appendChild(img); // Append the img to the results container
+        const img = document.createElement('img');
+        img.src = image.urls.small; // Use small-sized images for faster loading
+        img.alt = image.alt_description || 'Image';
+        img.className = 'search-result-image'; // Optional styling class
+        imageResults.appendChild(img);
     });
 }
