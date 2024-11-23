@@ -1,0 +1,18 @@
+button{
+    appearance: none;
+    background:none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 20vw;
+    min-width: 30px;
+    max-width: 100px;
+    height: 4vh;
+    min-height: 5px;
+    border-radius:0.5rem ;
+    background-color: #067BC2;
+    color: white;
+}
+.img{
+
+}
