@@ -13,28 +13,9 @@ app.use(express.json());
 
 
 //* static files
-app.use(express.static(path.join(__dirname,'../styles')));
-app.use(express.static(path.join(__dirname,'../tools')));
-app.use(express.static(path.join(__dirname,'../imgs')));
-//* MIME
-//* css MIME Fix
-app.get('/styles/:file',(req,res)=>{
-    const file = req.params.file;
-    res.setHeader('Content-Type','text/css')
-    res.sendFile(path.join(__dirname,'../styles',file))
-})
-//* JS MIME Fix
-app.get('/tools/:file',(req,res)=>{
-    const file = req.params.file;
-    res.setHeader('Content-Type','application/javascript')
-    res.sendFile(path.join(__dirname,'../tools',file))
-})
-//* IMGS MIME Fix
-app.get('/imgs/:file',(req,res)=>{
-    const file = req.params.file;
-    res.setHeader('Content-Type','image/jpg')
-    res.sendFile(path.join(__dirname,'../imgs',file))
-})
+app.use('/styles',express.static(path.join(__dirname,'../styles')));
+app.use('/tools',express.static(path.join(__dirname,'../tools')));
+
 
 
 //* Routes
