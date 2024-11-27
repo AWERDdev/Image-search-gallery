@@ -24,8 +24,16 @@ app.use('/tools', express.static(path.join(__dirname, '../tools')));
 app.get('/DevTest',(req,res)=>{
     res.sendFile(path.join(__dirname,'../views','MainPage.html'))
 })
-app.get('/customiseUrl',(req,res)=>{
-    
+app.get('/SearchOutput',(req,res)=>{
+    const url = ' https://api.unsplash.com/search/photos'
+    const APIKEY = 'q-Q28KB-Tm1tSvJ-copIMQOGxagnyLiazs6gf0mZMO4';
+    let NewURL;
+    const searchInput = req.query.searchInput;
+    NewURL = `${url}?query=${searchInput}&client_id=${APIKEY}`
+    console.log(NewURL);
+    // console.log(searchInput)
+    res.send(NewURL)
+     res.redirect('/DevTest')
 })
 app.listen(port,()=>{
     console.log(`server is listening on port ${port}`)
