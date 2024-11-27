@@ -24,7 +24,9 @@ app.use('/tools', express.static(path.join(__dirname, '../tools')));
 app.get('/DevTest',(req,res)=>{
     res.sendFile(path.join(__dirname,'../views','MainPage.html'))
 })
-
+app.get('/customiseUrl',(req,res)=>{
+    
+})
 app.listen(port,()=>{
     console.log(`server is listening on port ${port}`)
 })
